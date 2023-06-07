@@ -1,0 +1,6 @@
+﻿  MyForm.cpp
+  Source.cpp
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\calc_matr\calc_matr\Source.cpp(6,1): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  Создание кода...
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  calc_matr.vcxproj -> C:\Users\User\OneDrive\Рабочий стол\лабы инф\calc_matr\x64\Debug\calc_matr.exe

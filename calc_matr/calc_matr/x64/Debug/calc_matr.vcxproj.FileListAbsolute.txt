@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\calc_matr\calc_matr\x64\Debug\calc_matr.vcxproj.AssemblyReference.cache
+C:\Users\User\source\repos\calc_matr\calc_matr\x64\Debug\calc_matr.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\calc_matr\calc_matr\x64\Debug\calcmatr.MyForm.resources
+C:\Users\User\source\repos\calc_matr\calc_matr\x64\Debug\calc_matr.vcxproj.GenerateResource.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы Кивва\calc_matr\calc_matr\x64\Debug\calc_matr.vcxproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы Кивва\calc_matr\calc_matr\x64\Debug\calc_matr.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы Кивва\calc_matr\calc_matr\x64\Debug\calcmatr.MyForm.resources
+C:\Users\User\OneDrive\Рабочий стол\лабы Кивва\calc_matr\calc_matr\x64\Debug\calc_matr.vcxproj.GenerateResource.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\calc_matr\calc_matr\x64\Debug\calc_matr.vcxproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\calc_matr\calc_matr\x64\Debug\calc_matr.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\calc_matr\calc_matr\x64\Debug\calcmatr.MyForm.resources
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\calc_matr\calc_matr\x64\Debug\calc_matr.vcxproj.GenerateResource.cache
