@@ -1,1 +1,24 @@
-﻿  no ideas.vcxproj -> C:\Users\User\OneDrive\Рабочий стол\лабы инф\no ideas\x64\Debug\no ideas.exe
+﻿  MyForm.cpp
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(388,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(389,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(403,1): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(423,1): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(442,1): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(461,1): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(480,30): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(481,30): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(561,57): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  Source.cpp
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(388,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(389,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(403,1): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(423,1): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(442,1): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(461,1): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(480,30): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(481,30): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\MyForm.h(561,57): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\no ideas\Source.cpp(6,1): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  Создание кода...
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  no ideas.vcxproj -> C:\Users\User\OneDrive\Рабочий стол\лабы инф\noideas\x64\Debug\no ideas.exe

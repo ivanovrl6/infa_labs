@@ -26,8 +26,16 @@ namespace noideas {
 			draw_pn = gcnew Pen(Color::Blue, 3);
 			br_pol = gcnew SolidBrush(Color::Blue);
 			ar = gcnew array<PointF>(1);
+			prev_ch = gcnew array<float, 2>(3, 3);
+			identity_mat(prev_ch);
+			curr_ch = gcnew array<float, 2>(3, 3);
+			identity_mat(curr_ch);
+			 gen_ch= gcnew array<float, 2>(3, 3);
+			 identity_mat(gen_ch);
+			 buff_arr = gcnew array<PointF>(1);
 			origin.X = 0;
 			origin.Y = 0;
+			buf_origin = origin;
 		}
 
 	protected:
@@ -284,18 +292,20 @@ namespace noideas {
 		Brush^ br;
 		Brush^ br_pol;
 		array<PointF, 1>^ ar;
-
 		int pointID = 0;
-
+		array<float, 2>^ prev_ch;
+		array<float, 2>^ curr_ch;
+		array<float, 2>^ gen_ch;
 		bool isPoint = false;
-
+		array<PointF>^ buff_arr;
 		PointF origin;
+		PointF buf_origin;
 
 		Void clear(Image^ img, Brush^ br) {
 			Graphics^ gr = Graphics::FromImage(img);
 			gr->FillRectangle(br, 0, 0, img->Width, img->Height);
 		}
-		void rotate(double phi) {
+		/*void rotate(double phi) {
 			array<float, 2>^ rot = gcnew array<float, 2>(3, 3);
 			PointF buffer;
 			rotate_mat(origin,phi, rot);
@@ -368,14 +378,16 @@ namespace noideas {
 			gr = Graphics::FromImage(pbPlot->Image);
 			gr->FillPolygon(br_pol, ar);
 			pbPlot->Refresh();
-		}
+		}*/
 	private: System::Void plot_button_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (lBx->Items->Count > 2) {
 			clear(pbPlot->Image, br);
 			ar->Resize(ar, lBx->Items->Count);
+			buff_arr->Resize(buff_arr, lBx->Items->Count);
 			for (int i = 0; i < lBx->Items->Count; i++) {
 				ar[i].X = Convert::ToDouble(lBx->Items[i]);
 				ar[i].Y = Convert::ToDouble(lBy->Items[i]);
+				buff_arr[i] = ar[i];
 			}
 			Graphics^ gr;
 			gr = Graphics::FromImage(pbPlot->Image);
@@ -388,36 +400,181 @@ private: System::Void pbPlot_MouseClick(System::Object^ sender, System::Windows:
 	lBy->Items->Add(Convert::ToString(e->Location.Y));
 }
 private: System::Void Right_scale_Click(System::Object^ sender, System::EventArgs^ e) {
-	scale(1, 1.1);
+	scale_mat(buf_origin,1,1.1,curr_ch);
+	multiply(curr_ch, prev_ch, gen_ch);
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++) {
+			prev_ch[i, j] = gen_ch[i, j];
+		}
+	}for (int i = 0; i < lBx->Items->Count; i++)
+	{
+		buff_arr[i] = apply(ar[i], gen_ch);
+	}
+	buf_origin = apply(origin, gen_ch);
+	clear(pbPlot->Image, br);
+	Graphics^ gr;
+	gr = Graphics::FromImage(pbPlot->Image);
+	gr->FillPolygon(br_pol, buff_arr);
+	pbPlot->Refresh();
+	
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	scale(1, 0.9);
+	scale_mat(buf_origin, 1, 0.9, curr_ch);
+	multiply(curr_ch, prev_ch, gen_ch);
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++) {
+			prev_ch[i, j] = gen_ch[i, j];
+		}
+	}for (int i = 0; i < lBx->Items->Count; i++)
+	{
+		buff_arr[i] = apply(ar[i], gen_ch);
+	}
+	buf_origin = apply(origin, gen_ch);
+	clear(pbPlot->Image, br);
+	Graphics^ gr;
+	gr = Graphics::FromImage(pbPlot->Image);
+	gr->FillPolygon(br_pol, buff_arr);
+	pbPlot->Refresh();
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	scale(1.1, 1);
+	scale_mat(buf_origin, 1.1, 1, curr_ch);
+	multiply(curr_ch, prev_ch, gen_ch);
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++) {
+			prev_ch[i, j] = gen_ch[i, j];
+		}
+	}for (int i = 0; i < lBx->Items->Count; i++)
+	{
+		buff_arr[i] = apply(ar[i], gen_ch);
+	}
+	buf_origin = apply(origin, gen_ch);
+	clear(pbPlot->Image, br);
+	Graphics^ gr;
+	gr = Graphics::FromImage(pbPlot->Image);
+	gr->FillPolygon(br_pol, buff_arr);
+	pbPlot->Refresh();
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	scale(0.9, 1);
+	scale_mat(buf_origin, 0.9, 1, curr_ch);
+	multiply(curr_ch, prev_ch, gen_ch);
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++) {
+			prev_ch[i, j] = gen_ch[i, j];
+		}
+	}for (int i = 0; i < lBx->Items->Count; i++)
+	{
+		buff_arr[i] = apply(ar[i], gen_ch);
+	}
+	buf_origin = apply(origin, gen_ch);
+	clear(pbPlot->Image, br);
+	Graphics^ gr;
+	gr = Graphics::FromImage(pbPlot->Image);
+	gr->FillPolygon(br_pol, buff_arr);
+	pbPlot->Refresh();
 }
 private: System::Void btn_center_Click(System::Object^ sender, System::EventArgs^ e) {
 	origin.X = Convert::ToDouble(lBx->SelectedItem);
 	origin.Y = Convert::ToDouble(lBy->SelectedItem);
-
+	buf_origin = apply(origin,gen_ch);
 }
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	move(0, 10);
-}
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		move_mat(0, 10, curr_ch);
+		multiply(curr_ch, prev_ch, gen_ch);
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++) {
+				prev_ch[i, j] = gen_ch[i, j];
+			}
+		}for (int i = 0; i < buff_arr->Length; i++)
+		{
+			buff_arr[i] = apply(ar[i], gen_ch);
+		}
+		buf_origin = apply(origin, gen_ch);
+		clear(pbPlot->Image, br);
+		Graphics^ gr;
+		gr = Graphics::FromImage(pbPlot->Image);
+		gr->FillPolygon(br_pol, buff_arr);
+		pbPlot->Refresh();
+	}
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	move(0, -10);
+	move_mat(0, -10, curr_ch);
+	multiply(curr_ch, prev_ch, gen_ch);
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++) {
+			prev_ch[i, j] = gen_ch[i, j];
+		}
+	}for (int i = 0; i < buff_arr->Length; i++)
+	{
+		buff_arr[i] = apply(ar[i], gen_ch);
+	}
+	buf_origin = apply(origin, gen_ch);
+	clear(pbPlot->Image, br);
+	Graphics^ gr;
+	gr = Graphics::FromImage(pbPlot->Image);
+	gr->FillPolygon(br_pol, buff_arr);
+	pbPlot->Refresh();
 }
-private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-	move(10, 0);
-}
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+		move_mat(10, 0, curr_ch);
+		multiply(curr_ch, prev_ch, gen_ch);
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++) {
+				prev_ch[i, j] = gen_ch[i, j];
+			}
+		}for (int i = 0; i < buff_arr->Length; i++)
+		{
+			buff_arr[i] = apply(ar[i], gen_ch);
+		}
+		buf_origin = apply(origin, gen_ch);
+		clear(pbPlot->Image, br);
+		Graphics^ gr;
+		gr = Graphics::FromImage(pbPlot->Image);
+		gr->FillPolygon(br_pol, buff_arr);
+		pbPlot->Refresh();
+	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	move(-10, 0);
+	move_mat(-10, 0, curr_ch);
+	multiply(curr_ch, prev_ch, gen_ch);
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++) {
+			prev_ch[i, j] = gen_ch[i, j];
+		}
+	}for (int i = 0; i < buff_arr->Length; i++)
+	{
+		buff_arr[i] = apply(ar[i], gen_ch);
+	}
+	buf_origin = apply(origin, gen_ch);
+	clear(pbPlot->Image, br);
+	Graphics^ gr;
+	gr = Graphics::FromImage(pbPlot->Image);
+	gr->FillPolygon(br_pol, buff_arr);
+	pbPlot->Refresh();
 }
 private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
-	rotate(Convert::ToDouble(tBname->Text)/57.3);
+	rotate_mat(buf_origin, Convert::ToDouble(tBname->Text) / 57.3, curr_ch);
+	multiply(curr_ch, prev_ch, gen_ch);
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++) {
+			prev_ch[i, j] = gen_ch[i, j];
+		}
+	}for (int i = 0; i < buff_arr->Length; i++)
+	{
+		buff_arr[i] = apply(ar[i], gen_ch);
+	}
+	buf_origin = apply(origin, gen_ch);
+	clear(pbPlot->Image, br);
+	Graphics^ gr;
+	gr = Graphics::FromImage(pbPlot->Image);
+	gr->FillPolygon(br_pol, buff_arr);
+	pbPlot->Refresh();
 }
 private: System::Void pbPlot_Click(System::Object^ sender, System::EventArgs^ e) {
 }
