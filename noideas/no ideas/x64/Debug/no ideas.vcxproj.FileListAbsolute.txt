@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\no ideas\no ideas\x64\Debug\no ideas.vcxproj.AssemblyReference.cache
+C:\Users\User\source\repos\no ideas\no ideas\x64\Debug\no ideas.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\no ideas\no ideas\x64\Debug\noideas.MyForm.resources
+C:\Users\User\source\repos\no ideas\no ideas\x64\Debug\no ideas.vcxproj.GenerateResource.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы Кивва\no ideas\no ideas\x64\Debug\no ideas.vcxproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы Кивва\no ideas\no ideas\x64\Debug\no ideas.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы Кивва\no ideas\no ideas\x64\Debug\noideas.MyForm.resources
+C:\Users\User\OneDrive\Рабочий стол\лабы Кивва\no ideas\no ideas\x64\Debug\no ideas.vcxproj.GenerateResource.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\no ideas\no ideas\x64\Debug\no ideas.vcxproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\no ideas\no ideas\x64\Debug\no ideas.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\no ideas\no ideas\x64\Debug\noideas.MyForm.resources
+C:\Users\User\OneDrive\Рабочий стол\лабы инф\no ideas\no ideas\x64\Debug\no ideas.vcxproj.GenerateResource.cache
